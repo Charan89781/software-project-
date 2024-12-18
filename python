@@ -1,0 +1,18 @@
+from github import Github
+
+# Authentication with GitHub
+# Replace 'your_github_token' with your GitHub personal access token
+g = Github("your_github_token")
+
+# Specify the repository to fork
+# Replace 'owner/repository_name' with the full name of the repository you want to fork
+repo_name = "owner/repository_name"
+
+# Get the repository
+repo = g.get_repo(repo_name)
+
+# Fork the repository to your GitHub account
+forked_repo = repo.create_fork()
+
+# Output the URL of the forked repository
+print(f"Repository forked successfully! You can access your fork at: {forked_repo.html_url}")
